@@ -1,0 +1,15 @@
+.login{
+   background-image: url(./images/loginBg.jpg);
+   width: 100vw;
+   height: 100vh;
+   background-size: cover;
+}
+
+
+
+
+/* <img
+        src={loginBg}
+        className="w-screen h-screen absolute  "
+        alt="bg"
+      ></img> */
