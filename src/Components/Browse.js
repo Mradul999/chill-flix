@@ -40,11 +40,11 @@ export const Browse = () => {
         {/* //logo and signout button  */}
       <div className=" flex  w-screen z-10   absolute bg-red-600  ">
         <img
-          className="w-[10rem] h-[5rem] mx-10 my-10 gap-2 absolute "
+          className="w-[10rem] h-[5rem] mx-10 mt-4 gap-2 absolute "
           src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
           alt="logo"
         />
-        <div className="flex items-center mx-10 my-10 gap-2 absolute  right-0 ">
+        <div className="flex items-center mx-10 mt-8 gap-2 absolute  right-0 ">
           {user?.photoURL && (
             <img src={user.photoURL} alt="User" className="rounded-sm h-12" />
           )}

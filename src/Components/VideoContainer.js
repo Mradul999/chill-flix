@@ -9,12 +9,12 @@ export const VideContainer=()=>{
 
   if(!movies) return;
 
-  const mainMovie=movies[0];
+  const mainMovie=movies[2];
  
   const{original_title,overview,id}=mainMovie;
 
     return(
-        <div className="w-screen  max-h-[33rem]    ">
+        <div className="w-screen  m    ">
             <VideoTitle title={original_title} overview={overview} />
             <VideoBackground movie_ID={id}/>
         </div>
