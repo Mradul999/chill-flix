@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
 import "./Login.css";
+import {LOGO} from "../utils/constants.js";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ export const Login = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+         
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -89,7 +90,7 @@ export const Login = () => {
     <div className="w-screen h-screen login overflow-x-hidden mb-[-1.5rem] px-10 pt-5">
       <img
         className="w-[10rem] h-[5rem]"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        src={LOGO}
         alt="logo"
       />
       <div>
