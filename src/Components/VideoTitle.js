@@ -2,7 +2,7 @@ import { FaPlay } from "react-icons/fa6";
 import { GrCircleInformation } from "react-icons/gr";
 export const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="w-screen pt-[25%] bg-gradient-to-r aspect-video  from-black   px-20 flex gap-6 flex-col absolute text-white ">
+    <div className="w-screen pt-[25%] aspect-video bg-gradient-to-r from-black    px-20 flex gap-6 flex-col absolute text-white ">
       <h1 className="text-6xl font-bold">{title}</h1>
       <p className="text-[14px] max-w-[30rem]">{overview}</p>
       <div className="flex flex-row gap-3">

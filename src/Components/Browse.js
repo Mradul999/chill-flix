@@ -3,9 +3,15 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
-import {usenowPlayingMovies} from "../hooks/usenowPlayingMovies.js";
+import {useNowPlayingMovies} from "../hooks/useNowPlayingMovies.js";
 import { VideContainer } from "./VideoContainer.js";
-import { ListContainer } from "./ListComponent.js";
+import { ListContainer } from "./ListContainer.js";
+import { usePopularMovies } from "../hooks/usePopularMovies.js";
+import { useTopratedMovies } from "../hooks/useTopRatedMovies.js";
+import { useUpcomingMovies } from "../hooks/useUpcomingMovies.js";
+import { LOGO } from "../utils/constants.js";
+
+
 
 
 
@@ -14,8 +20,10 @@ export const Browse = () => {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  usenowPlayingMovies();
-
+  useNowPlayingMovies();
+  usePopularMovies();
+  useTopratedMovies();
+  useUpcomingMovies();
 
 
 
@@ -36,15 +44,16 @@ export const Browse = () => {
   }
 
   return (
-    <div className="w-screen relative ">
+    
+    <div className="w-screen relative hide-scrollbar pb-10 bg-black ">
         {/* //logo and signout button  */}
       <div className=" flex  w-screen z-10   absolute bg-red-600  ">
-        <img
-          className="w-[10rem] h-[5rem] mx-10 mt-4 gap-2 absolute "
-          src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-          alt="logo"
-        />
-        <div className="flex items-center mx-10 mt-8 gap-2 absolute  right-0 ">
+      <img
+        className="w-[10rem] h-[5rem] mx-10 mt-36 gap-2 absolute"
+        src={LOGO}
+        alt="logo"
+      />
+        <div className="flex items-center mx-10 mt-40 gap-2 absolute  right-0 ">
           {user?.photoURL && (
             <img src={user.photoURL} alt="User" className="rounded-sm h-12" />
           )}
@@ -59,7 +68,7 @@ export const Browse = () => {
 
       {/* //video container */}
       <VideContainer/>
-      {/* <ListContainer/> */}
+      <ListContainer/>
 
     </div>
   );

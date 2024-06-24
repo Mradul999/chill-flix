@@ -6,8 +6,12 @@ import {Appstore} from "./utils/Appstore.js";
 
 function App() {
   return (
-    
+    <div className="overflow-x-hidden">
       <Body></Body>
+
+    </div>
+    
+      
     
   );
 }
