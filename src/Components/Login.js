@@ -87,7 +87,7 @@ export const Login = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="w-screen h-screen login overflow-x-hidden mb-[-1.5rem] px-10 pt-5">
+    <div className="w-screen h-screen login overflow-x-hidden  px-10 pt-5">
       <img
         className="w-[10rem] h-[5rem]"
         src={LOGO}

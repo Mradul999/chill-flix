@@ -9,7 +9,7 @@ export const VideContainer=()=>{
 
   if(!movies) return;
 
-  const mainMovie=movies[10];
+  const mainMovie=movies[18];
  
   const{original_title,overview,id}=mainMovie;
 
