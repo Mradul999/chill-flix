@@ -10,7 +10,6 @@ export const ListContainer=()=>{
             <MoviesList title={"Popular Movies"} movies={movies.popularMovies}/>
             <MoviesList title={"TopRated "} movies={movies.topratedMovies}/>
             <MoviesList title={"Upcoming Movies"} movies={movies.upcomingMovies}/>
-            {/* <MoviesList title={"Now Playing"} movies={movies.nowPlayingMovies}/> */}
             </div>
         </div>
     );

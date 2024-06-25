@@ -15,7 +15,6 @@ import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
 
-
 export const Browse = () => {
   const user = useSelector((store) => store.user);
   const showGPTsearch = useSelector((store) => store.gpt.showGPTsearch);
@@ -26,11 +25,11 @@ export const Browse = () => {
   useTopratedMovies();
   useUpcomingMovies();
 
+
   // const [showSearchBar, setShowSearchBar] = useState(false);
 
   const userClickHandler = () => {
     dispatch(toggleGPTsearch());
-    
   };
 
   function signOutHandler() {
@@ -63,7 +62,9 @@ export const Browse = () => {
 
         <IoMdSearch
           onClick={userClickHandler}
-          className={`text-[30px] ${showGPTsearch? "text-red-600 ":"text-white"} cursor-pointer   absolute mt-8 right-24`}
+          className={`text-[30px] ${
+            showGPTsearch ? "text-red-600 " : "text-white"
+          } cursor-pointer   absolute mt-8 right-24`}
         />
         <div className="flex items-center mx-10 mt-8  gap-2 absolute group      right-0 ">
           <FaUserCircle
@@ -84,10 +85,14 @@ export const Browse = () => {
         </div>
       </div>
 
-      {showGPTsearch ? <GPTsearch></GPTsearch> : <>
-      <VideContainer></VideContainer>
-      <ListContainer></ListContainer>
-      </>}
+      {showGPTsearch ? (
+        <GPTsearch></GPTsearch>
+      ) : (
+        <>
+          <VideContainer></VideContainer>
+          <ListContainer></ListContainer>
+        </>
+      )}
     </div>
   );
 };
