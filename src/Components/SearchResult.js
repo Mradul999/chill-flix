@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
-import { MoviesList } from "./MoviesList";
+// import { MoviesList } from "./MoviesList";
+import { MoviesListSearched } from "./MoviesListSearched";
+
 
 export const SearchResult = ({ query }) => {
   const movies = useSelector((store) => store.movies);
@@ -8,9 +10,9 @@ export const SearchResult = ({ query }) => {
     message = "No Available Movies";
   }
   return (
-    <div className="px-4">
+    <div className="px-4 ">
       {movies.moviesBySearch && movies.moviesBySearch.length > 0 ? (
-        <MoviesList title={"Available Results"} movies={movies.moviesBySearch} />
+        <MoviesListSearched title={"Available Results"} movies={movies.moviesBySearch} />
       ) : (
         <h1 className="text-white text-center mt-10 text-lg font-semibold">
           {message}
@@ -19,4 +21,3 @@ export const SearchResult = ({ query }) => {
     </div>
   );
 };
-    

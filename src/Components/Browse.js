@@ -14,6 +14,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
+import "./MoviesListSearched.css";
 
 export const Browse = () => {
   const user = useSelector((store) => store.user);
@@ -43,7 +44,7 @@ export const Browse = () => {
   }
 
   return (
-    <div className="w-screen relative hide-scrollbar  pb-10 bg-black ">
+    <div className="w-screen relative hide-scrollbar  pb-10 bg-black  hide-scrollbar  ">
       {/* //logo and signout button  */}
       <div className=" flex  w-screen z-10 absolute bg-red-600  ">
         <img

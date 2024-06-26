@@ -3,20 +3,16 @@ import "./MoviesList.css";
 
 export const MoviesList = ({ title, movies }) => {
   return (
-    <div className="pl-4 overflow-visible ">
-      <h1 className="text-[20px] mb-1 font-semibold text-white ">{title}</h1>
-      <div className="flex overflow-x-scroll hide-scrollbar">
-        <div className="flex relative overflow-visible">
-          {movies?.map((movie) => (
-            <MoviesCard
-              key={movie.id}
+    <div className="">
+            
+            <div className="flex flex-row h-[500px] pt-[5rem]   overflow-x-scroll  space-x-4 hide-scrollbar ml-[2rem]  pr-[13rem] ">
+            <h1 className="text-white font-semibold text-[2rem]  mt-10 ">{title}</h1>
+                {movies?.map((movie)=>(<MoviesCard key={movie.id}
               poster={movie.poster_path}
               overview={movie.overview}
-              vote_average={movie.vote_average}
-            />
-          ))}
+              average_vote={movie.vote_average}/>))}
+            </div>
+
         </div>
-      </div>
-    </div>
   );
 };
