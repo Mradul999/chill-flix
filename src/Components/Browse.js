@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { removeUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies.js";
 import { VideContainer } from "./VideoContainer.js";
 import { ListContainer } from "./ListContainer.js";
@@ -24,7 +24,6 @@ export const Browse = () => {
   usePopularMovies();
   useTopratedMovies();
   useUpcomingMovies();
-
 
   // const [showSearchBar, setShowSearchBar] = useState(false);
 
@@ -48,7 +47,7 @@ export const Browse = () => {
       {/* //logo and signout button  */}
       <div className=" flex  w-screen z-10 absolute bg-red-600  ">
         <img
-          className="w-[10rem] h-[5rem] mx-10 mt-5 gap-2 absolute"
+          className="w-[10rem] h-[5rem] mx-4 mt-2 gap-2 absolute"
           src={LOGO}
           alt="logo"
         />
@@ -64,9 +63,9 @@ export const Browse = () => {
           onClick={userClickHandler}
           className={`text-[30px] ${
             showGPTsearch ? "text-red-600 " : "text-white"
-          } cursor-pointer   absolute mt-8 right-24`}
+          } cursor-pointer   absolute mt-6 right-20`}
         />
-        <div className="flex items-center mx-10 mt-8  gap-2 absolute group      right-0 ">
+        <div className="flex items-center mx-6 mt-6  gap-2 absolute group      right-0 ">
           <FaUserCircle
             // onClick={userClickHandler}
             className="text-[30px] text-red-600  cursor-pointer"

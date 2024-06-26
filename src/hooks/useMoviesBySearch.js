@@ -8,7 +8,7 @@ export const useMoviesBySearch = (query) => {
 
   const getMoviesBySearch = async () => {
     if (!query) {
-        dispatch(resetMoviesBySearch());
+      dispatch(resetMoviesBySearch());
       return;
     }
     try {
@@ -17,11 +17,14 @@ export const useMoviesBySearch = (query) => {
         options
       );
       const json = await response.json();
-      // console.log(json);
 
-      dispatch(addMoviesBySearch(json.results));
+     
+      const filteredResults = json.results.filter(movie => movie.poster_path);
+
+      dispatch(addMoviesBySearch(filteredResults));
+
     } catch (error) {
-
+      console.error('Failed to fetch movies:', error);
     }
   };
 

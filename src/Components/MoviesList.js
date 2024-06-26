@@ -3,15 +3,17 @@ import "./MoviesList.css";
 
 export const MoviesList = ({ title, movies }) => {
   return (
-    <div className=" pl-12   ">
-        <h1 className="text-[2.3rem] mb-1 font-semibold text-white ">{title}</h1>    
-      <div className="flex overflow-x-scroll hide-scrollbar  ">
-        
-
-        <div className="flex ">
+    <div className="pl-4 overflow-visible ">
+      <h1 className="text-[20px] mb-1 font-semibold text-white ">{title}</h1>
+      <div className="flex overflow-x-scroll hide-scrollbar">
+        <div className="flex relative overflow-visible">
           {movies?.map((movie) => (
-            <MoviesCard key={movie.id} poster={movie.poster_path} />
-            
+            <MoviesCard
+              key={movie.id}
+              poster={movie.poster_path}
+              overview={movie.overview}
+              vote_average={movie.vote_average}
+            />
           ))}
         </div>
       </div>

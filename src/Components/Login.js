@@ -137,7 +137,7 @@ export const Login = () => {
           <span className="text-red-600 font-bold mb-8 text-left">
             {errorMsg}
           </span>
-          <div className="mx-auto flex gap-3 items-center text-xl font-semibold">
+          <div className="mx-auto flex gap-3 items-center text-[1rem] sm:text-xl font-semibold">
             {isSignUp ? (
               <>
                 Already signed up?
@@ -147,7 +147,7 @@ export const Login = () => {
               </>
             ) : (
               <>
-                New to Chillflix?
+                <span>New to Chillflix?</span>
                 <button onClick={toggleForm} className="bg-red-600 py-2 px-4 rounded-lg text-white">
                   Sign Up
                 </button>
