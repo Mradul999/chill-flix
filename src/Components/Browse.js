@@ -14,7 +14,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
-import "./MoviesListSearched.css";
+import chilll from "./images/chilll.png"
+
 
 export const Browse = () => {
   const user = useSelector((store) => store.user);
@@ -46,12 +47,8 @@ export const Browse = () => {
   return (
     <div className="w-screen relative hide-scrollbar  pb-10 bg-black  hide-scrollbar  ">
       {/* //logo and signout button  */}
-      <div className=" flex  w-screen z-10 absolute bg-red-600  ">
-        <img
-          className="w-[10rem] h-[5rem] mx-4 mt-2 gap-2 absolute"
-          src={LOGO}
-          alt="logo"
-        />
+      <div className=" flex  w-screen z-10 absolute   ">
+        <h1 className="text-red-600 font-bold text-[2.7rem] mt-2 ml-6">CHILLFLIX</h1>
 
         {/* <div className={`absolute right-[9rem]  flex items-center     bg-black border-white border-[1.3px]  bg-opacity-50 text-white text-[15px] py-2  rounded-lg mt-[10rem]   transition-all ease-in-out duration-400 ${
             showSearchBar ? "opacity-100 scale-x-100 " : "opacity-0 scale-x-0 border-none "

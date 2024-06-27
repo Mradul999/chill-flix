@@ -1,24 +1,41 @@
+import { useState } from "react";
 import { IMG_URL } from "../utils/constants";
 import "./MovieCard.css";
+import useFetchMovieTrailer from "../hooks/useFetchMovieTrailer";
 
-export const MoviesCard = ({ poster, trailer, overview, vote_average }) => {
+export const MoviesCard = ({ poster, movieId, overview, vote_average }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const trailer = useFetchMovieTrailer(isHovered ? movieId : null);
+
   return (
-    <div className="relative group max-w-[150px] flex-shrink-0 overflow-visible">
+    <div
+      className="relative group max-w-[150px] flex-shrink-0 overflow-visible"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <img
-        className="w-full image-tile -z-2"
+        className="w-full image-tile -z-2 transition-transform duration-300 ease-in-out group-hover:scale-105"
         src={IMG_URL + poster}
         alt="Movie Poster"
       />
-      <div className="flex flex-col absolute left-[-4rem] top-[-3rem] w-[300px] shadow-sm shadow-red-600 z-10 scale-0 transition delay-300 duration-300 ease-in-out group-hover:scale-110 bg-red-900 text-white p-4 rounded-lg">
-        {trailer && (
+      <div className="flex flex-col absolute left-[-4rem] top-[-3rem] w-[300px] shadow-sm shadow-red-600 z-10 scale-0 transition-transform duration-300 ease-in-out group-hover:scale-110 bg-red-900 text-white p-4 rounded-lg">
+        {trailer ? (
           <iframe
-            className="w-full mx-auto aspect-video"
-            src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=1`}
-            allow="autoplay"
-          ></iframe>
+          key={trailer.key}   
+          className="w-full mx-auto aspect-video rounded-lg"
+          src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=1`}
+          allow="autoplay"
+          frameBorder="0"
+        ></iframe>
+        ) : ( 
+          <img
+            src={IMG_URL + poster}
+            alt="Hover Poster"
+            className="w-full h-[200px] object-contain mb-2 rounded"
+          />
         )}
         <p className="text-[12px] mb-1">{overview}</p>
-        <p className="text-[12px] font-semibold">{vote_average}</p>
+        <p className="text-[12px] font-semibold">Average Vote: {vote_average}</p>
       </div>
     </div>
   );

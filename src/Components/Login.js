@@ -1,12 +1,17 @@
 import { Validate } from "../utils/Validate";
 import { useRef, useState, useEffect } from "react";
-import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
 import "./Login.css";
-import {LOGO} from "../utils/constants.js";
+import { LOGO } from "../utils/constants.js";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -56,7 +61,6 @@ export const Login = () => {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-         
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -88,11 +92,10 @@ export const Login = () => {
 
   return (
     <div className="w-screen h-screen login overflow-x-hidden  px-10 pt-5">
-      <img
-        className="w-[10rem] h-[5rem]"
-        src={LOGO}
-        alt="logo"
-      />
+      <h1 className="text-red-600 font-bold text-[2.7rem] mt-2 ml-2">
+        CHILLFLIX
+      </h1>
+
       <div>
         <form
           onSubmit={(e) => e.preventDefault()}
@@ -141,14 +144,20 @@ export const Login = () => {
             {isSignUp ? (
               <>
                 Already signed up?
-                <button onClick={toggleForm} className="bg-red-600 py-2 px-4 rounded-lg text-white">
+                <button
+                  onClick={toggleForm}
+                  className="bg-red-600 py-2 px-4 rounded-lg text-white"
+                >
                   Sign In now
                 </button>
               </>
             ) : (
               <>
                 <span>New to Chillflix?</span>
-                <button onClick={toggleForm} className="bg-red-600 py-2 px-4 rounded-lg text-white">
+                <button
+                  onClick={toggleForm}
+                  className="bg-red-600 py-2 px-4 rounded-lg text-white"
+                >
                   Sign Up
                 </button>
               </>
@@ -159,5 +168,3 @@ export const Login = () => {
     </div>
   );
 };
-
-
