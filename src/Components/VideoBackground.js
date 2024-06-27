@@ -10,7 +10,7 @@ export const VideoBackground = ({ movie_ID }) => {
     <div className="w-screen hide-scrollbar">
       <iframe
         className="w-screen aspect-video"
-        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=50`}
+        src={`https://www.youtube.com/embed/3CpKBAPqqM0?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=50`}
         allow="autoplay"
       ></iframe>
     </div>
