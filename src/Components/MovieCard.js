@@ -31,7 +31,7 @@ export const MoviesCard = ({ poster, movieId, overview, vote_average }) => {
           <img
             src={IMG_URL + poster}
             alt="Hover Poster"
-            className="w-full h-[200px] object-contain mb-2 rounded"
+            className="w-full h-[200px] object-cover mb-2 rounded"
           />
         )}
         <p className="text-[12px] mb-1">{overview}</p>

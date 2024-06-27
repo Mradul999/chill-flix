@@ -10,6 +10,7 @@ const moviesSlice = createSlice({
 
     upcomingMovies: null,
     moviesBySearch:null,
+    moviesByCategory:null,
   },
   reducers: {
     addnowPlayingMovies: (state, action) => {
@@ -36,6 +37,9 @@ const moviesSlice = createSlice({
     resetMoviesBySearch:(state,action)=>{
         state.moviesBySearch=null;
     },
+    addMoviesByCategory:(state,action)=>{
+      state.moviesByCategory=action.payload;
+    }
   },
 });
 
@@ -48,4 +52,5 @@ export const {
   addUpcomingMovies,
   resetMoviesBySearch,
   addMoviesBySearch,
+  addMoviesByCategory,
 } = moviesSlice.actions;
