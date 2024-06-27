@@ -18,7 +18,7 @@ export const GPTsearch = () => {
     }
   return (
     <div on  className="h-screen w-screen   ">
-      <div className=" flex justify-center pt-32 sm:pt-10 pb-10 ">
+      <div className=" flex justify-center pt-32 sm:pt-16 pb-10 ">
         <form onSubmit={submitHandler} className="flex flex-col gap-4 mx-3   ">
         <input
         value={query}

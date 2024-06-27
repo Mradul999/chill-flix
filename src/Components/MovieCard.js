@@ -14,20 +14,20 @@ export const MoviesCard = ({ poster, movieId, overview, vote_average }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        className="w-full image-tile -z-2 transition-transform duration-300 ease-in-out group-hover:scale-105"
+        className="w-full image-tile transition-transform duration-300 ease-in-out lg:group-hover:scale-105"
         src={IMG_URL + poster}
         alt="Movie Poster"
       />
-      <div className="flex flex-col absolute left-[-4rem] top-[-3rem] w-[300px] shadow-sm shadow-red-600 z-10 scale-0 transition-transform duration-300 ease-in-out group-hover:scale-110 bg-red-900 text-white p-4 rounded-lg">
+      <div className="flex flex-col absolute left-[-4rem]   top-[-3rem] w-[300px] shadow-sm shadow-red-600 z-20 transform scale-0 transition-transform duration-300 ease-in-out lg:group-hover:scale-110 bg-red-900 text-white p-4  rounded-lg">
         {trailer ? (
           <iframe
-          key={trailer.key}   
-          className="w-full mx-auto aspect-video rounded-lg"
-          src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=1`}
-          allow="autoplay"
-          frameBorder="0"
-        ></iframe>
-        ) : ( 
+            key={trailer.key} // Add key prop to force reload
+            className="w-full mx-auto aspect-video rounded-lg"
+            src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&loop=1`}
+            allow="autoplay"
+            frameBorder="0"
+          ></iframe>
+        ) : (
           <img
             src={IMG_URL + poster}
             alt="Hover Poster"
