@@ -13,6 +13,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import ProtectedRoute from "./ProtectedRoute";
+import { Watch } from "./Watch.js";
 
 export const Body = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,11 @@ export const Body = () => {
     {
       path: "/browse",
       element: <ProtectedRoute element={<Browse />} />,
+    },
+    {
+      path:"/watch",
+      element:<Watch/>,
+
     },
     
   ]);

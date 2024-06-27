@@ -9,8 +9,8 @@ const moviesSlice = createSlice({
     topratedMovies: null,
 
     upcomingMovies: null,
-    moviesBySearch:null,
-    moviesByCategory:null,
+    moviesBySearch: null,
+    moviesByCategory: null,
   },
   reducers: {
     addnowPlayingMovies: (state, action) => {
@@ -30,16 +30,18 @@ const moviesSlice = createSlice({
     addUpcomingMovies: (state, action) => {
       state.upcomingMovies = action.payload;
     },
-    addMoviesBySearch:(state,action)=>{
-        state.moviesBySearch=action.payload;
-
+    addMoviesBySearch: (state, action) => {
+      state.moviesBySearch = action.payload;
     },
-    resetMoviesBySearch:(state,action)=>{
-        state.moviesBySearch=null;
+    resetMoviesBySearch: (state) => {
+      state.moviesBySearch = null;
     },
-    addMoviesByCategory:(state,action)=>{
-      state.moviesByCategory=action.payload;
-    }
+    addMoviesByCategory: (state, action) => {
+      state.moviesByCategory = action.payload;
+    },
+    resetMoviesByCategory: (state) => {
+      state.moviesByCategory = null;
+    },
   },
 });
 
@@ -53,4 +55,5 @@ export const {
   resetMoviesBySearch,
   addMoviesBySearch,
   addMoviesByCategory,
+  resetMoviesByCategory,
 } = moviesSlice.actions;

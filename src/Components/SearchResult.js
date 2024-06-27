@@ -20,7 +20,7 @@ export const SearchResult = ({ query, category }) => {
             />
           ) : (
             <h1 className="text-white text-center mt-10 text-lg font-semibold">
-              {message}
+              <span className="text-[18px]">{message}</span>
             </h1>
           )}
         </div>
@@ -33,7 +33,7 @@ export const SearchResult = ({ query, category }) => {
             />
           ) : (
             <h1 className="text-white text-center mt-10 text-lg font-semibold">
-              {message}
+              <span className="text-[18px]">{message}</span>
             </h1>
           )}
         </div>

@@ -3,11 +3,11 @@ import { VideoTitle } from "./VideoTitle.js";
 import { VideoBackground } from "./VideoBackground.js";
 
 export const VideContainer = () => {
-  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
+  const movies = useSelector((store) => store.movies?.topratedMovies);
 
   if (!movies) return null;
 
-  const mainMovie = movies[18];
+  const mainMovie = movies[1];
   const { original_title, overview, id } = mainMovie;
 
   return (

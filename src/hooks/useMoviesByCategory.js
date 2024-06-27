@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addMoviesByCategory, resetMoviesBySearch } from "../utils/moviesSlice";
+import { addMoviesByCategory, resetMoviesByCategory, resetMoviesBySearch } from "../utils/moviesSlice";
 import { options } from "../utils/constants";
 import { useEffect } from "react";
 
@@ -8,7 +8,8 @@ export const useMoviesByCategory = (category) => {
 
   const getMoviesByCategory = async () => {
     if (!category) {
-      dispatch(resetMoviesBySearch());
+      dispatch(resetMoviesByCategory());
+
       return;
     }
     try {
