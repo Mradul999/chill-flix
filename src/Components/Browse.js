@@ -48,7 +48,7 @@ export const Browse = () => {
     <div className="w-screen relative hide-scrollbar  pb-10 bg-black  hide-scrollbar  ">
       {/* //logo and signout button  */}
       <div className=" flex  w-screen z-10 absolute   ">
-        <h1 className="text-red-600 font-bold text-[2.7rem] mt-2 ml-6">CHILLFLIX</h1>
+        <h1 className="text-red-600 font-bold md:text-[2rem] text-[1.7rem] lg:text-[2.7rem] mt-4 sm:mt-2 ml-6">CHILLFLIX</h1>
 
         {/* <div className={`absolute right-[9rem]  flex items-center     bg-black border-white border-[1.3px]  bg-opacity-50 text-white text-[15px] py-2  rounded-lg mt-[10rem]   transition-all ease-in-out duration-400 ${
             showSearchBar ? "opacity-100 scale-x-100 " : "opacity-0 scale-x-0 border-none "
