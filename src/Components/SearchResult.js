@@ -10,7 +10,7 @@ export const SearchResult = ({ query, category }) => {
   }
 
   return (
-    <div className="px-4 ">
+    <div className="px-2 ">
       {query ? (
         <div>
           {movies.moviesBySearch && movies.moviesBySearch.length > 0 ? (

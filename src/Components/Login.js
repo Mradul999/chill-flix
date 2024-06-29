@@ -91,7 +91,7 @@ export const Login = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="w-screen h-screen login overflow-x-hidden  px-10 pt-5">
+    <div className="w-screen h-screen login overflow-x-hidden  px-2 pt-5">
       <h1 className="text-red-600 font-bold text-[2.7rem] mt-2 ml-2">
         CHILLFLIX
       </h1>

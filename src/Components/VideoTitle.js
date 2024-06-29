@@ -1,5 +1,5 @@
 import { FaPlay } from "react-icons/fa";
-import { GrCircleInformation } from "react-icons/gr";
+
 import "./VideoTitle.css";
 import { NavLink, Navigate } from "react-router-dom";
 

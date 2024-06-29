@@ -9,7 +9,7 @@ export const MoviesCard = ({ poster, movieId, overview, vote_average }) => {
 
   return (
     <div
-      className="relative group md:w-[130px] sm:w-[120px] w-[100px] lg:w-[150px] flex-shrink-0 overflow-visible"
+      className="relative group md:w-[130px]  w-[100px] lg:w-[150px] flex-shrink-0 overflow-visible"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -18,7 +18,7 @@ export const MoviesCard = ({ poster, movieId, overview, vote_average }) => {
         src={IMG_URL + poster}
         alt="Movie Poster"
       />
-      <div className="flex flex-col absolute left-[-4rem]   top-[-3rem] max-w-[300px] shadow-sm shadow-red-600 z-20 transform scale-0 transition-transform duration-300 ease-in-out group-hover:scale-110 bg-red-900 text-white   rounded-lg">
+      <div className="flex flex-col absolute left-[-4rem]   top-[-3rem] w-[170px] shadow-sm shadow-red-600 z-20 transform scale-0 transition-transform duration-300 ease-in-out group-hover:scale-110 bg-red-900 text-white   rounded-lg">
         {trailer ? (
           <iframe
             key={trailer.key} // Add key prop to force reload
