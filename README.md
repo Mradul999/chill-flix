@@ -6,4 +6,4 @@ search movie by title
 Search by category
 
 Live Demo:
-https://reactchillflix.netlify.app/
+https://react-chillflix.netlify.app
