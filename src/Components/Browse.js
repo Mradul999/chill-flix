@@ -63,9 +63,9 @@ export const Browse = () => {
             // onClick={userClickHandler}
             className="text-[30px] text-red-600  cursor-pointer"
           />
-          <div className=" scale-0   group-hover:scale-110 transition-all duration-300    ">
+          <div className=" scale-0   group-hover:scale-110  duration-300    ">
             <div className="absolute bg-black  bg-opacity-80  p-4 rounded-md top-1 right-2 mt-5 ">
-              <p className="text-white text-[13px]">{user.displayName}</p>,
+              <p className="text-white  text-[13px]">{user.displayName}</p>,
               <button
                 onClick={signOutHandler}
                 className="bg-red-600 py-2   w-[6rem]      rounded-md  text-white font-semibold text-[13px]"

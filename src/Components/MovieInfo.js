@@ -6,6 +6,8 @@ import ReactPlayer from "react-player";
 import useFetchCast from "../hooks/useFetchCast";
 import "./MovieInfo.css";
 import CastCard from "./CastCard";
+import { useState } from "react";
+import { useEffect } from "react";
 export default function MovieInfo() {
   const location = useLocation();
   const {
@@ -18,8 +20,19 @@ export default function MovieInfo() {
     voteCount,
     popularity,
   } = location.state || {};
+  const [isLoading, setIsLoading] = useState(true);
   const trailer = useFetchMovieTrailer(movieId);
   const cast = useFetchCast(movieId);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [movieId]);
+
+  useEffect(() => {
+    if (trailer) {
+      setIsLoading(false);
+    }
+  }, [trailer]);
 
   return (
     <div className="w-screen p-10   bg text-white flex flex-col  ">
@@ -30,17 +43,25 @@ export default function MovieInfo() {
           src={IMG_URL + poster}
         ></img>
         <div className="w-[700px]  rounded-xl overflow-hidden">
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center ">
+              <p className="text-white">No available trailer</p>
+            </div>
+          )}
           {trailer ? (
             <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${trailer.key}`}
+              url={`https://www.youtube.com/watch?v=${trailer.key}&rel=0`}
               playing
               width="100%"
               height="100%"
               controls
               className=""
+              onReady={() => setIsLoading(false)}
             />
           ) : (
-            <div>Sorry trailer not available</div>
+            <div className="h-full flex items-center justify-center">
+              <p className="text-white"> </p>
+            </div>
           )}
         </div>
         <div className="max-w-[260px] flex flex-col gap-2 ml-2">
