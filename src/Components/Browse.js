@@ -2,19 +2,19 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { removeUser } from "../utils/userSlice";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies.js";
 import { VideContainer } from "./VideoContainer.js";
 import { ListContainer } from "./ListContainer.js";
 import { usePopularMovies } from "../hooks/usePopularMovies.js";
 import { useTopratedMovies } from "../hooks/useTopRatedMovies.js";
 import { useUpcomingMovies } from "../hooks/useUpcomingMovies.js";
-import { LOGO } from "../utils/constants.js";
+
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
-import chilll from "./images/chilll.png"
+
 
 
 export const Browse = () => {
@@ -47,15 +47,10 @@ export const Browse = () => {
   return (
     <div className="w-screen relative hide-scrollbar  pb-10 bg-black  hide-scrollbar  ">
       {/* //logo and signout button  */}
-      <div className=" flex  w-screen z-10 absolute   ">
-        <h1 className="text-red-600 font-bold md:text-[2rem] text-[1.7rem] lg:text-[2.7rem] mt-4 sm:mt-2 ml-6">CHILLFLIX</h1>
+      <div className=" flex  w-screen z-40 absolute   ">
+        <h1 className="text-red-600 font-bold text-[2.3rem]  ml-12 mt-3 ">CHILLFLIX</h1>
 
-        {/* <div className={`absolute right-[9rem]  flex items-center     bg-black border-white border-[1.3px]  bg-opacity-50 text-white text-[15px] py-2  rounded-lg mt-[10rem]   transition-all ease-in-out duration-400 ${
-            showSearchBar ? "opacity-100 scale-x-100 " : "opacity-0 scale-x-0 border-none "
-          }`}>
-        {showSearchBar && <input placeholder="Titles,Genres,related" className="focus:outline-none w-full  bg-black pl-2 px-10 bg-opacity-0" type="text"></input>}
-
-        </div> */}
+        
 
         <IoMdSearch
           onClick={userClickHandler}

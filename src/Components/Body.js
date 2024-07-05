@@ -14,6 +14,7 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import ProtectedRoute from "./ProtectedRoute";
 import { Watch } from "./Watch.js";
+import MovieInfo from "./MovieInfo.js";
 
 export const Body = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,11 @@ export const Body = () => {
     {
       path:"/watch",
       element:<Watch/>,
+
+    },
+    {
+      path:"/movieinfo",
+      element:<MovieInfo/>
 
     },
     

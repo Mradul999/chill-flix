@@ -1,6 +1,5 @@
 import { FaPlay } from "react-icons/fa";
 
-import "./VideoTitle.css";
 import { NavLink, Navigate } from "react-router-dom";
 
 export const VideoTitle = ({ title, overview }) => {
@@ -8,11 +7,13 @@ export const VideoTitle = ({ title, overview }) => {
     Navigate("/watch");
   }
   return (
-    <div className="w-[100%]  sm:pt-[13%] md:pt-[20%] pt-[15%] aspect-video element-with-gradient bg-cover bg-center px-10 sm:px-20 flex flex-col gap-2 sm:gap-6 absolute text-white   ">
-      <h1 className="text-2xl  font-bold sm:text-4xl md:text-5xl">My Fault</h1>
-      <p className="lg:text-[15px] text-gray-400 sm:text-[15px] text-[10px] max-w-[400px] mr-[8rem] ">
-        Noah leaves her town with her mother Rafaella, leaving behind her
-        boyfriend Dan and her friends, to move into the mansion.....
+    <div className="max-w-[40%]    pt-[15%] aspect-video   pl-12 flex flex-col gap-2 sm:gap-6 absolute text-white z-10   ">
+      <h1 className="text-4xl  font-bold ">My Fault</h1>
+      <p  className=" text-gray-400 ] text-2xl  ">
+        A young woman who moves into a mansion with her mother, Rafaella, and
+        her new billionaire husband. Amid this change, she finds herself
+        navigating a potential conflict-fuelled romance with her stepbrother
+        Nick.
       </p>
       <div className="flex flex-row gap-3">
         <NavLink to="/watch">

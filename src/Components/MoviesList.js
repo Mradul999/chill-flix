@@ -3,11 +3,11 @@ import "./MoviesList.css";
 
 export const MoviesList = ({ title, movies }) => {
   return (
-    <div className="">
-      <div className="flex flex-row items-center   pt-[5rem] pl-[1rem]  overflow-x-scroll space-x-4 hide-scrollbar ml-[0.5rem] pr-[3rem]">
-        <h1 className="text-white font-semibold md:text-[1.5rem] sm:text-[1.2rem] text-[1rem] lg:text-[2rem]  ">
-          {title}
-        </h1>
+    <div className="pl-12 pr-12  pb-6">
+      <h1 className="text-white font-semibold  text-[2rem]   ">
+        {title}
+      </h1>
+      <div className="flex flex-row items-center   pt-2 overflow-x-scroll space-x-4 hide-scrollbar ">
         {movies?.map((movie) => (
           <MoviesCard
             key={movie.id}
@@ -15,6 +15,11 @@ export const MoviesList = ({ title, movies }) => {
             movieId={movie.id}
             overview={movie.overview}
             vote_average={movie.vote_average}
+            title={movie.title}
+            releaseDate={movie.release_date}
+            voteCount={movie.vote_count}
+            popularity={movie.popularity}
+
           />
         ))}
       </div>

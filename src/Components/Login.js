@@ -91,15 +91,15 @@ export const Login = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="w-screen h-screen login overflow-x-hidden  px-2 pt-5">
-      <h1 className="text-red-600 font-bold text-[2.7rem] mt-2 ml-2">
+    <div className="w-screen bg h-screen login overflow-x-hidden  px-2 pt-5">
+      <h1 className="text-red-600 font-bold text-[2.2rem] sm:text-[2.7rem] sm:text-start text-center mt-2 ml-2">
         CHILLFLIX
       </h1>
 
       <div>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col justify-center p-14 mt-12 mx-auto rounded-lg max-w-[380px] bg-black bg-opacity-80 text-white"
+          className="flex flex-col justify-center p-3 sm:p-10  mt-12 mx-auto rounded-lg max-w-[380px] bg-black bg-opacity-90  text-white"
         >
           <h1 className="text-white text-[25px] mb-10 font-semibold">
             {isSignUp ? "Sign Up" : "Sign In"}
@@ -140,7 +140,7 @@ export const Login = () => {
           <span className="text-red-600 font-bold mb-8 text-left">
             {errorMsg}
           </span>
-          <div className="mx-auto flex gap-3 items-center text-[1rem] sm:text-xl font-semibold">
+          <div className="mx-auto flex flex-col sm:flex sm:flex-row gap-3 items-center text-[1.2rem]  sm:text-xl font-semibold">
             {isSignUp ? (
               <>
                 Already signed up?
