@@ -4,7 +4,7 @@ import { MoviesList } from "./MoviesList";
 
 export const SearchResult = ({
   query,
-  category,
+  
   Categorypage1Movies,
   Categorypage2Movies,
   Categorypage3Movies,
@@ -19,12 +19,12 @@ export const SearchResult = ({
   }
 
   return (
-    <div className="px-2   ">
+    <div className="   ">
       {query ? (
         <div>
           {movies.moviesBySearch && movies.moviesBySearch.length > 0 ? (
             <div>
-              <h1 className="font-semibold text-[2rem] text-white ml-12">
+              <h1 className="font-semibold  text-white sm:text-[2rem] text-[1.3rem] ml-2 sm:ml-12">
                 Available Movies
               </h1>
               <MoviesList movies={Searchpage1Movies} />
@@ -41,7 +41,7 @@ export const SearchResult = ({
         <div>
           {movies.moviesByCategory && movies.moviesByCategory.length > 0 ? (
             <div className="">
-              <h1 className="font-semibold text-[2rem] text-white ml-12">
+              <h1 className="font-semibold  text-white sm:text-[2rem] text-[1.3rem] ml-2 sm:ml-12">
                 Available Movies
               </h1>
 

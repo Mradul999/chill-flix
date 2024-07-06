@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase.js";
 import { removeUser } from "../utils/userSlice";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies.js";
 import { VideContainer } from "./VideoContainer.js";
 import { ListContainer } from "./ListContainer.js";
@@ -14,9 +14,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
-import "./background.css"
-
-
+import "./background.css";
 
 export const Browse = () => {
   const user = useSelector((store) => store.user);
@@ -46,20 +44,20 @@ export const Browse = () => {
   }
 
   return (
-    <div className="w-screen relative hide-scrollbar  pb-10 background hide-scrollbar  ">
+    <div className="w-screen relative hide-scrollbar  pb-4 background hide-scrollbar  ">
       {/* //logo and signout button  */}
-      <div className=" flex  w-screen z-40 absolute   ">
-        <h1 className="text-red-600 font-bold text-[2.3rem]  ml-12 mt-3 ">CHILLFLIX</h1>
-
-        
+      <div className=" flex   w-screen z-40 absolute   ">
+        <h1 className="text-red-600 font-bold text-[1.5rem] sm:text-[2.3rem] ml-2 sm:ml-12 mt-4 ">
+          CHILLFLIX
+        </h1>
 
         <IoMdSearch
           onClick={userClickHandler}
           className={`text-[30px] ${
             showGPTsearch ? "text-red-600 " : "text-white"
-          } cursor-pointer   absolute mt-6 right-20`}
+          } cursor-pointer   absolute mt-4 right-14 sm:right-24`}
         />
-        <div className="flex items-center mx-6 mt-6  gap-2 absolute group      right-0 ">
+        <div className="flex items-center mx-3 mt-4  gap-2 absolute group      right-0 sm:right-5 ">
           <FaUserCircle
             // onClick={userClickHandler}
             className="text-[30px] text-red-600  cursor-pointer"

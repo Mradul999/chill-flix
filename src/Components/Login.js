@@ -92,7 +92,7 @@ export const Login = () => {
 
   return (
     <div className="w-screen login-bg  min-h-screen login overflow-x-hidden  px-2 pt-5">
-      <h1 className="text-red-600 font-bold text-[2.2rem] sm:text-[2.7rem] max-w-[200px]  sm:text-start text-center  mt-2 ml-2">
+      <h1 className="text-red-600 font-bold text-[2rem] sm:text-[2.7rem]    mt-2 ml-1 sm:ml-2">
         CHILLFLIX
       </h1>
 

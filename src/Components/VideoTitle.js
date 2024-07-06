@@ -16,48 +16,35 @@ export const VideoTitle = () => {
         releaseDate: "2023-06-8",
         voteCount: 2661,
         popularity: 498.481,
-        title:"My Fault"
+        title: "My Fault",
       },
     });
   }
   return (
-    <div className="max-w-[40%]    pt-[15%] aspect-video   pl-12 flex flex-col gap-2 sm:gap-6 absolute text-white z-10   ">
-      <h1 className="text-4xl  font-bold ">My Fault</h1>
-      <p className=" text-gray-400 ] text-2xl  ">
+    <div className="sm:max-w-[40%] pt-[25%]  sm:pt-[15%] aspect-video  pl-3 sm:pl-12 flex flex-col gap-5 sm:gap-6 absolute text-white z-10   ">
+      <h1 className="sm:text-4xl text-xl  font-bold ">My Fault</h1>
+      <p className=" text-gray-400 ] text-[10px] sm:text-2xl hidden sm:block  ">
         A young woman who moves into a mansion with her mother, Rafaella, and
         her new billionaire husband. Amid this change, she finds herself
         navigating a potential conflict-fuelled romance with her stepbrother
         Nick.
       </p>
-      <div className="flex flex-row gap-3 items-center">
+      <div className="flex flex-row gap-4  items-center">
         <NavLink to="/watch">
-          <button className="bg-red-600 hover:bg-red-400 py-[4px] px-[8px] flex items-center gap-1 rounded text-white font-semibold text-[10px] sm:text-[16px] sm:px-5 sm:py-1 md:text-[17px]">
-            <FaPlay className="text-[10px] sm:text-[20px]" />
+          <button className="bg-red-600 hover:bg-red-400 py-[4px] px-[8px] flex items-center gap-1 rounded text-white font-semibold text-[13px] sm:text-[16px] sm:px-5 sm:py-1 md:text-[17px]">
+            <FaPlay className="text-[13px] sm:text-[20px]" />
             Play
           </button>
         </NavLink>
 
         <button
           onClick={clickhandler}
-          className="bg-red-600 hover:bg-red-400 py-[4px] px-[8px] flex items-center gap-1 rounded text-white font-semibold text-[10px] sm:text-[16px] sm:px-5 sm:py-1 md:text-[17px]"
+          className="bg-red-600 hover:bg-red-400 py-[4px] px-[8px] flex items-center gap-1 rounded text-white font-semibold text-[13px] sm:text-[16px] sm:px-5 sm:py-1 md:text-[17px]"
         >
-          <MdInfoOutline className="text-[10px] sm:text-[23px]" />
+          <MdInfoOutline className="text-[15px] sm:text-[23px]" />
           More Info
         </button>
       </div>
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@ export default function CastCard({ profilePath, name, character }) {
         background: "linear-gradient(to right, #3f4c6b, #606c88)" // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
       };
   return (
-    <div style={gradientBackground} className=" w-[150px] rounded-lg flex flex-col   p-3 justify-between card-bg    gap-1 text-[13px]">
+    <div style={gradientBackground} className="max-w-[150px] rounded-lg flex flex-col   p-1 pb-2 justify-between card-bg    gap-1 text-[13px]">
       {profilePath ? (
         <img
           className="object-cover rounded-lg "
@@ -24,8 +24,8 @@ export default function CastCard({ profilePath, name, character }) {
         />
       )}
       <div>
-      <h3 className="font-serif">{name}</h3>
-      <p className="font-serif "><span className="font-bold">as</span> {character}</p>
+      <h3 className="font-serif sm:text-[12px] text-[10px]">{name}</h3>
+      <p className="font-serif sm:text-[12px] text-[10px]"><span className="font-bold">as</span> {character}</p>
 
       </div>
 
