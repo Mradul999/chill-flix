@@ -44,7 +44,7 @@ export default function MovieInfo() {
         {title}
       </h1>
       <div className=" flex flex-col md:flex-row   md:gap-3 gap-10 mb-16  ">
-        <div className="w-full md:w-[900px] h-[200px] sm:h-full  sm:max-h-[500px] order-first md:order-none rounded-xl overflow-hidden movie-bg">
+        <div className="w-full md:w-[900px] h-[200px]   sm:h-[500px] order-first md:order-none rounded-xl overflow-hidden movie-bg">
           {isLoading && (
             <div className="absolute left-[30%] top-[20%] flex items-center justify-center ">
               <p className="text-white">Trailer not Available</p>
@@ -69,11 +69,11 @@ export default function MovieInfo() {
 
         <div className="flex sm:flex-row flex-col  gap-3 ">
           <img
-            className="rounded-xl w-[90%] sm:w-[44%]    object-fill  "
+            className="rounded-xl w-[90%] sm:w-[48%]    object-fill  "
             src={IMG_URL + poster}
           ></img>
 
-          <div className="max-w-[260px] flex flex-col gap-2 ml-2">
+          <div className="max-w-[270px] flex flex-col gap-2 ml-2">
             <h1 className="font-bold text-[1.2rem] sm:text-[1.7rem]">
               Movie Overview
             </h1>
