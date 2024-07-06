@@ -12,10 +12,10 @@ export const MoviesCard = ({ poster, movieId, overview, vote_average ,title,rele
   };
 
   return (
-    <div className="relative cursor-pointer hover:scale-90  transition-all md:w-[130px]  w-[100px] lg:w-[150px] flex-shrink-0 ">
+    <div className="relative cursor-pointer hover:scale-90   transition-all md:w-[130px]  w-[100px] lg:w-[150px] flex-shrink-0 ">
       <img
         onClick={clickhandler}
-        className="w-full image-tile "
+        className="w-full image-tile rounded-lg "
         src={IMG_URL + poster}
         alt="Movie Poster"
       />

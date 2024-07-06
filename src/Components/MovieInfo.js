@@ -42,7 +42,7 @@ export default function MovieInfo() {
           className="rounded-xl w-[20%] h-[100%] object-cover  "
           src={IMG_URL + poster}
         ></img>
-        <div className="w-[700px]  rounded-xl overflow-hidden">
+        <div className="w-[700px]  rounded-xl overflow-hidden movie-bg">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center ">
               <p className="text-white">No available trailer</p>

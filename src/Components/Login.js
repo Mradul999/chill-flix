@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice.js";
 import "./Login.css";
-import { LOGO } from "../utils/constants.js";
+
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -91,15 +91,15 @@ export const Login = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="w-screen bg h-screen login overflow-x-hidden  px-2 pt-5">
-      <h1 className="text-red-600 font-bold text-[2.2rem] sm:text-[2.7rem] sm:text-start text-center mt-2 ml-2">
+    <div className="w-screen login-bg  min-h-screen login overflow-x-hidden  px-2 pt-5">
+      <h1 className="text-red-600 font-bold text-[2.2rem] sm:text-[2.7rem] max-w-[200px]  sm:text-start text-center  mt-2 ml-2">
         CHILLFLIX
       </h1>
 
-      <div>
+      
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col justify-center p-3 sm:p-10  mt-12 mx-auto rounded-lg max-w-[380px] bg-black bg-opacity-90  text-white"
+          className="flex flex-col justify-center p-3 sm:p-10  mt-12 mx-auto rounded-lg max-w-[380px] bg-black bg-opacity-90 form text-white"
         >
           <h1 className="text-white text-[25px] mb-10 font-semibold">
             {isSignUp ? "Sign Up" : "Sign In"}
@@ -164,7 +164,7 @@ export const Login = () => {
             )}
           </div>
         </form>
-      </div>
+      
     </div>
   );
 };

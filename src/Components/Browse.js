@@ -14,6 +14,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { toggleGPTsearch } from "../utils/gptSlice.js";
 import { GPTsearch } from "./GPTsearch.js";
+import "./background.css"
 
 
 
@@ -45,7 +46,7 @@ export const Browse = () => {
   }
 
   return (
-    <div className="w-screen relative hide-scrollbar  pb-10 bg-black  hide-scrollbar  ">
+    <div className="w-screen relative hide-scrollbar  pb-10 background hide-scrollbar  ">
       {/* //logo and signout button  */}
       <div className=" flex  w-screen z-40 absolute   ">
         <h1 className="text-red-600 font-bold text-[2.3rem]  ml-12 mt-3 ">CHILLFLIX</h1>

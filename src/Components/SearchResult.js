@@ -2,7 +2,16 @@ import { useSelector } from "react-redux";
 
 import { MoviesList } from "./MoviesList";
 
-export const SearchResult = ({ query, category }) => {
+export const SearchResult = ({
+  query,
+  category,
+  Categorypage1Movies,
+  Categorypage2Movies,
+  Categorypage3Movies,
+  Searchpage1Movies,
+  Searchpage2Movies,
+  Searchpage3Movies,
+}) => {
   const movies = useSelector((store) => store.movies);
   let message = "Try Searching some Movies";
   if (query) {
@@ -10,14 +19,18 @@ export const SearchResult = ({ query, category }) => {
   }
 
   return (
-    <div className="px-2 ">
+    <div className="px-2   ">
       {query ? (
         <div>
           {movies.moviesBySearch && movies.moviesBySearch.length > 0 ? (
-            <MoviesList
-              title={"Available Results"}
-              movies={movies.moviesBySearch}
-            />
+            <div>
+              <h1 className="font-semibold text-[2rem] text-white ml-12">
+                Available Movies
+              </h1>
+              <MoviesList movies={Searchpage1Movies} />
+              <MoviesList movies={Searchpage2Movies} />
+              <MoviesList movies={Searchpage3Movies} />
+            </div>
           ) : (
             <h1 className="text-white text-center mt-10 text-lg font-semibold">
               <span className="text-[18px]">{message}</span>
@@ -27,10 +40,15 @@ export const SearchResult = ({ query, category }) => {
       ) : (
         <div>
           {movies.moviesByCategory && movies.moviesByCategory.length > 0 ? (
-            <MoviesList
-              title={"Available Results"}
-              movies={movies.moviesByCategory}
-            />
+            <div className="">
+              <h1 className="font-semibold text-[2rem] text-white ml-12">
+                Available Movies
+              </h1>
+
+              <MoviesList movies={Categorypage1Movies} />
+              <MoviesList movies={Categorypage2Movies} />
+              <MoviesList movies={Categorypage3Movies} />
+            </div>
           ) : (
             <h1 className="text-white text-center mt-10 text-lg font-semibold">
               <span className="text-[18px]">{message}</span>

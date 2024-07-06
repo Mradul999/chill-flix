@@ -2,13 +2,22 @@ import { useState } from "react";
 import { SearchResult } from "./SearchResult";
 import { useMoviesBySearch } from "../hooks/useMoviesBySearch";
 import { useMoviesByCategory } from "../hooks/useMoviesByCategory";
-
+import "./background.css";
 export const GPTsearch = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
 
-  useMoviesBySearch(query);
-  useMoviesByCategory(category);
+  const page1 = 1;
+  const page2 = 2;
+  const page3 = 3;
+
+  const Categorypage1Movies = useMoviesByCategory(category, page1);
+  const Categorypage2Movies = useMoviesByCategory(category, page2);
+  const Categorypage3Movies = useMoviesByCategory(category, page3);
+
+  const Searchpage1Movies = useMoviesBySearch(query, page1);
+  const Searchpage2Movies = useMoviesBySearch(query, page2);
+  const Searchpage3Movies = useMoviesBySearch(query, page3);
 
   function submitHandler(e) {
     e.preventDefault();
@@ -22,7 +31,7 @@ export const GPTsearch = () => {
     setCategory(event.target.value);
   }
   return (
-    <div on className="h-screen w-screen   ">
+    <div className="min-h-screen w-screen background    ">
       <div className=" flex justify-center pt-32 sm:pt-16 pb-10 ">
         <form onSubmit={submitHandler} className="flex flex-col gap-4 mx-3   ">
           <input
@@ -52,7 +61,16 @@ export const GPTsearch = () => {
           </select>
         </form>
       </div>
-      <SearchResult query={query} category={category} />
+      <SearchResult
+        query={query}
+        category={category}
+        Categorypage1Movies={Categorypage1Movies}
+        Categorypage2Movies={Categorypage2Movies}
+        Categorypage3Movies={Categorypage3Movies}
+        Searchpage1Movies={Searchpage1Movies}
+        Searchpage2Movies={Searchpage2Movies}
+        Searchpage3Movies={Searchpage3Movies}
+      />
     </div>
   );
 };
