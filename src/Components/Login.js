@@ -20,7 +20,7 @@ export const Login = () => {
   const dispatch = useDispatch();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const nameRef = useRef(null); // Used for sign-up
+  const nameRef = useRef(null); 
 
   function toggleForm() {
     setIsSignUp(!isSignUp);
@@ -30,7 +30,7 @@ export const Login = () => {
   function clickHandler() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    const name = nameRef.current ? nameRef.current.value : null; // Name for sign-up
+    const name = nameRef.current ? nameRef.current.value : null; 
 
     const msg = Validate(email, password, isSignUp ? name : undefined);
     setErrorMsg(msg);
