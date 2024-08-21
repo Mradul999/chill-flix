@@ -26,3 +26,5 @@ Backend: Node.js, Express.js, google firebase
 APIs: The Movie Database (TMDb) API for movie data
 
 Authentication: Firebase Authentication
+
+live demo https://yourchillflix.netlify.app/
